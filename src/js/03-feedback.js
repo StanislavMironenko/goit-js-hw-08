@@ -1,7 +1,7 @@
 import throttle from 'lodash.throttle';
 
 const SAVE_USER_DATA_KEY = 'feedback-form-state';
-const userData = {};
+let userData = JSON.parse(localStorage.getItem(SAVE_USER_DATA_KEY))||{};
 
 const refs = {
   feetbackForm: document.querySelector('.feedback-form'),
@@ -18,12 +18,13 @@ function inputTextArea(e) {
   localStorage.setItem(SAVE_USER_DATA_KEY, JSON.stringify(userData));
   
 }
-
+console.log(userData)
 function onSubmitButtonClick(e) {
   e.preventDefault();
   console.log(JSON.parse(localStorage.getItem(SAVE_USER_DATA_KEY)));
   e.currentTarget.reset();
   localStorage.removeItem(SAVE_USER_DATA_KEY);
+  userData = {};
 }
 
 function populateText() {
