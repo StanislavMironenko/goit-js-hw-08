@@ -14,4 +14,3 @@ function callback({ seconds }) {
 player.setCurrentTime(
   JSON.parse(localStorage.getItem('videoplayer-current-time'))
 );
-console.log(JSON.parse(localStorage.getItem('videoplayer-current-time')));
