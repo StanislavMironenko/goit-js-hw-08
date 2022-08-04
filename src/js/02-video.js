@@ -10,7 +10,9 @@ player.on('timeupdate', throttle(callback, 1000));
 function callback({ seconds }) {
   localStorage.setItem('videoplayer-current-time', seconds);
 }
-
-player.setCurrentTime(
-  JSON.parse(localStorage.getItem('videoplayer-current-time'))
-);
+if (localStorage.getItem('videoplayer-current-time')) {
+  player.setCurrentTime(
+    JSON.parse(localStorage.getItem('videoplayer-current-time'))
+  );
+  
+}

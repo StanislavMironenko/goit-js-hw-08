@@ -20,6 +20,9 @@ function inputTextArea(e) {
 }
 console.log(userData)
 function onSubmitButtonClick(e) {
+  if (refs.textArea.value === '' || refs.textArea.value === '') {
+  return alert('Please fill in all the fields!');
+  }
   e.preventDefault();
   console.log(JSON.parse(localStorage.getItem(SAVE_USER_DATA_KEY)));
   e.currentTarget.reset();
