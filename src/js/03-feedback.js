@@ -18,7 +18,7 @@ function inputTextArea(e) {
   localStorage.setItem(SAVE_USER_DATA_KEY, JSON.stringify(userData));
   
 }
-console.log(userData)
+
 function onSubmitButtonClick(e) {
   if (refs.textArea.value === '' || refs.emailArea.value === '') {
     return alert('Please fill in all the fields!');
